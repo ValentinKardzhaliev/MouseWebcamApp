@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse and Webcam App</title>
+</head>
+<body>
+    <h1>Mouse and Webcam Application</h1>
+    <p>Move the mouse and click to take a picture with the webcam.</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        const socket = new WebSocket('ws://' + window.location.host + '/ws/mouse/');
+
+        document.addEventListener('mousemove', (event) => {
+            socket.send(JSON.stringify({event: 'mouse_move', x: event.clientX, y: event.clientY}));
+        });
+
+        document.addEventListener('click', () => {
+            socket.send(JSON.stringify({event: 'take_picture'}));
+        });
+
+        socket.onmessage = (message) => {
+            const data = JSON.parse(message.data);
+            if (data.type === 'mouse_update') {
+                console.log(`Mouse Position: ${data.x}, ${data.y}`);
+            } else if (data.type === 'picture_taken') {
+                const img = document.createElement('img');
+                img.src = 'data:image/jpeg;base64,' + data.image;
+                document.body.appendChild(img);
+            }
+        };
+    </script>
+</body>
+</html>
