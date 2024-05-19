@@ -5,7 +5,11 @@ This application captures mouse movements and webcam images, saving data to an S
 ## Setup
 
 1. Clone the repository.
-2. Create a virtual environment:
+2. Move into the project directory
+   ```bash
+   cd cd MouseWebcamApp
+   ```
+4. Create a virtual environment:
 ```bash
 python -m venv venv
 ```
