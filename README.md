@@ -2,7 +2,7 @@
 
 This application captures mouse movements and webcam images, saving data to an SQLite database.
 
-When the mouse is moved, its position is logged in the console and when you click it, you take an image from the webcam and save it in the database and display it to the client.
+When the mouse is moved, its position is logged in the console and when you click the left button, you take an image from the webcam and save it in the database and display it to the client.
 
 ## Setup
 
