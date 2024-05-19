@@ -14,6 +14,12 @@ cd MouseWebcamApp
 python -m venv venv
 ```
 3. Activate the virtual environment:
+   
+  Windows:
+  ```bash
+  venv\Scripts\activate
+  ```
+  Linux:
   ```bash
   source venv/bin/activate
   ```
