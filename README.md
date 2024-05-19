@@ -36,7 +36,6 @@ python -m venv venv
   ```bash
   python manage.py runserver
   ```
-## If you are working with PyCharm you can skip step 2 and 3, since they are automatically done when using Django, unless you have manually changed that.
 
 Required packages:
 ```bash
