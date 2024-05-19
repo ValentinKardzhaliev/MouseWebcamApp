@@ -7,7 +7,7 @@ This application captures mouse movements and webcam images, saving data to an S
 1. Clone the repository.
 2. Move into the project directory
    ```bash
-   cd cd MouseWebcamApp
+   cd MouseWebcamApp
    ```
 4. Create a virtual environment:
 ```bash
